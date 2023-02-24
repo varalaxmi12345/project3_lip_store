@@ -1,0 +1,8 @@
+<%= form_for(:search,:url=>"/gallery/search") do |f| %>
+
+    Search <input type="text" name="search">
+    <input type="submit" value="Go">
+<% end %>
+
+<%= render 'lip_store_gallery'%>
+

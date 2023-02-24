@@ -1,0 +1,25 @@
+<table>
+
+<tr>
+<% count=0 %>
+<% @lip_store_gallery.each do |lip_store|%>
+
+<% if (count % 3) == 0%>
+</tr>
+<tr>
+<% end %>
+<% count+=1 %>
+<td>
+<% lip_store.files.each do |file| %>
+    <%= image_tag file,width:"50px"%>
+    <% end %><br/>
+
+Name : <%= lip_store.name %><br />
+Color :<%= lip_store.colour %><br />
+Category : <%= lip_store.category %><br />
+Price : <%= lip_store.price %></br>
+<%= button_to 'Add to Cart', line_items_path(:store_id => lip_store.id )%> </td> <br/> 
+
+<% end %>
+</tr>
+</table>
